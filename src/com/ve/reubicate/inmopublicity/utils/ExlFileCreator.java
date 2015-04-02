@@ -25,8 +25,9 @@ public class ExlFileCreator {
             HSSFSheet sheet = workbook.createSheet("Customers");
             int count = 0;
             for (Customer customer : customers) {
-                HSSFRow row = sheet.createRow(count);
+
                 for (String phoneNumber : customer.getPhoneNumbers()) {
+                    HSSFRow row = sheet.createRow(count);
                     row.createCell(0).setCellValue(phoneNumber);
                     row.createCell(1).setCellValue(phoneNumber);
                     row.createCell(2).setCellValue(customer.getEmail());
