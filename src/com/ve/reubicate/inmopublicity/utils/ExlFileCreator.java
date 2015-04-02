@@ -23,8 +23,9 @@ public class ExlFileCreator {
             String filename = "Customers.xls";
             HSSFWorkbook workbook = new HSSFWorkbook();
             HSSFSheet sheet = workbook.createSheet("Customers");
+            int count = 0;
             for (Customer customer : customers) {
-                HSSFRow row = sheet.createRow((short) 1);
+                HSSFRow row = sheet.createRow(count);
                 for (String phoneNumber : customer.getPhoneNumbers()) {
                     row.createCell(0).setCellValue(phoneNumber);
                     row.createCell(1).setCellValue(phoneNumber);
@@ -32,6 +33,7 @@ public class ExlFileCreator {
                     row.createCell(3).setCellValue(countryCode);
                     row.createCell(4).setCellValue(message);
                 }
+                count++;
 
             }
             FileOutputStream fileOut = new FileOutputStream(filename);

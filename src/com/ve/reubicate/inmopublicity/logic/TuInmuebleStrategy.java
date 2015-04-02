@@ -59,6 +59,7 @@ public class TuInmuebleStrategy implements Strategy {
             }
 
         } catch (IOException ex) {
+            retrieveCustomers();
             Logger.getLogger(TuInmuebleStrategy.class.getName()).log(Level.SEVERE, null, ex);
         }
         return customers;

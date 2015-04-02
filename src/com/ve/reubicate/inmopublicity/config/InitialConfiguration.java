@@ -10,5 +10,7 @@ package com.ve.reubicate.inmopublicity.config;
  * @author Luis
  */
 public class InitialConfiguration {
+    //This set the maximun number of pages
+    //the crawler needs to fetch.
     public static final int MAX_PAGE=2;
 }
